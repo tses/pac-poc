@@ -1,0 +1,28 @@
+apiVersion: tekton.dev/v1
+kind: PipelineRun
+metadata:
+  name: deploy-on-comment
+  namespace: pac-poc
+  annotations:
+    pipelinesascode.tekton.dev/on-event: "[pull_request]"
+    pipelinesascode.tekton.dev/on-target-branch: "[master]"
+    pipelinesascode.tekton.dev/on-comment: "^/deploy$"
+    pipelinesascode.tekton.dev/max-keep-runs: "5"
+spec:
+  pipelineSpec:
+    tasks:
+      - name: run-deploy
+        taskSpec:
+          steps:
+            - name: deploy
+              image: registry.access.redhat.com/ubi8/ubi-minimal:latest
+              script: |
+                #!/bin/bash
+                echo "==================================="
+                echo "🚀 DEPLOYING APPLICATION"
+                echo "==================================="
+                echo "Deploying to environment..."
+                sleep 2
+                echo "Running health checks..."
+                sleep 1
+                echo "✅ Deployment successful!"

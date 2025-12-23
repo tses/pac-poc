@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: deploy-task
+  namespace: pac-poc
+spec:
+  steps:
+    - name: deploy
+      image: registry.access.redhat.com/ubi8/ubi-minimal:latest
+      script: |
+        #!/bin/bash
+        echo "==================================="
+        echo "🚀 DEPLOYING APPLICATION"
+        echo "==================================="
+        echo "Deploying to environment..."
+        sleep 2
+        echo "Running health checks..."
+        sleep 1
+        echo "✅ Deployment successful!"

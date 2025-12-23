@@ -1,0 +1,19 @@
+apiVersion: tekton.dev/v1
+kind: Task
+metadata:
+  name: build-task
+  namespace: pac-poc
+spec:
+  steps:
+    - name: build
+      image: registry.access.redhat.com/ubi8/ubi-minimal:latest
+      script: |
+        #!/bin/bash
+        echo "==================================="
+        echo "🔨 BUILDING APPLICATION"
+        echo "==================================="
+        echo "Compiling code..."
+        sleep 2
+        echo "Creating artifacts..."
+        sleep 1
+        echo "✅ Build completed successfully!"

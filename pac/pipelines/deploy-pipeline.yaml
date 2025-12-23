@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: deploy-pipeline
+  namespace: pac-poc
+spec:
+  tasks:
+    - name: deploy-app
+      taskRef:
+        name: deploy-task

@@ -1,0 +1,10 @@
+apiVersion: tekton.dev/v1
+kind: Pipeline
+metadata:
+  name: test-pipeline
+  namespace: pac-poc
+spec:
+  tasks:
+    - name: run-tests
+      taskRef:
+        name: test-task
