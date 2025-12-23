@@ -2,24 +2,17 @@ apiVersion: tekton.dev/v1
 kind: PipelineRun
 metadata:
   name: test-on-pr
-  namespace: pac-poc
   annotations:
     pipelinesascode.tekton.dev/on-event: "[pull_request]"
     pipelinesascode.tekton.dev/on-target-branch: "[main]"
     pipelinesascode.tekton.dev/max-keep-runs: "5"
 spec:
-  pipelineSpec:
-    tasks:
-      - name: run-tests
-        taskSpec:
-          steps:
-            - name: test
-              image: registry.access.redhat.com/ubi8/ubi-minimal:latest
-              script: |
-                #!/bin/bash
-                echo "==================================="
-                echo "🧪 RUNNING TESTS"
-                echo "==================================="
-                echo "Running unit tests..."
-                sleep 2
-                echo "✅ All tests passed!"
+  pipelineRef:
+    resolver: cluster
+    params:
+      - name: kind
+        value: pipeline
+      - name: name
+        value: test-pipeline
+      - name: namespace
+        value: pac-poc
