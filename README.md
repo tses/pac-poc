@@ -3,7 +3,7 @@
 ## Περιγραφή
 Οδηγός για Pipelines as Code με GitLab, δείχνοντας Task Reusability και Selective/Full Pipeline Execution.
 
-**Repository:** `http://cicd-scm.solutioncenter.uni/unisystemsstm-fiware/fiwaremqtt-client`  
+**Repository:** `[http://github.com/tses/pac-poc](https://github.com/tses/pac-poc)`  
 **Namespace:** `pac-poc`
 
 ---
