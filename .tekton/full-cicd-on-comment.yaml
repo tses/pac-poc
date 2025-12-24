@@ -3,8 +3,7 @@ kind: PipelineRun
 metadata:
   name: full-cicd-on-comment
   annotations:
-    # pipelinesascode.tekton.dev/on-target-branch: "[main]"
-    pipelinesascode.tekton.dev/on-comment: "^/runall$"
+    pipelinesascode.tekton.dev/on-comment: "/run-all"
     pipelinesascode.tekton.dev/max-keep-runs: "5"
 spec:
   pipelineRef:

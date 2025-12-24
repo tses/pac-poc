@@ -3,8 +3,7 @@ kind: PipelineRun
 metadata:
   name: deploy-on-comment
   annotations:
-    pipelinesascode.tekton.dev/on-target-branch: "[main]"
-    pipelinesascode.tekton.dev/on-comment: "^/deploy$"
+    pipelinesascode.tekton.dev/on-comment: "/deploy"
     pipelinesascode.tekton.dev/max-keep-runs: "5"
 spec:
   pipelineRef:
