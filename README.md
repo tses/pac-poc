@@ -3,7 +3,7 @@
 ## Περιγραφή
 Οδηγός για Pipelines as Code με GitLab, δείχνοντας Task Reusability και Selective/Full Pipeline Execution.
 
-**Repository:** `[http://github.com/tses/pac-poc](https://github.com/tses/pac-poc)`  
+**Repository:** `[https://github.com/tses/pac-poc](https://github.com/tses/pac-poc)`  
 **Namespace:** `pac-poc`
 
 ---
