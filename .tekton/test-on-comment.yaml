@@ -3,7 +3,6 @@ kind: PipelineRun
 metadata:
   name: test-on-comment
   annotations:
-    pipelinesascode.tekton.dev/on-target-branch: "[main]"
     pipelinesascode.tekton.dev/on-comment: "/test"
     pipelinesascode.tekton.dev/max-keep-runs: "5"
 spec:
